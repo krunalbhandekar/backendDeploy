@@ -20,9 +20,9 @@ PlanRoutes.post("/post",verifyTokenAndAdmin,async(req,res)=>{
 //get
 
 PlanRoutes.get("/",async(req,res)=>{
-    // const allPlanData=await PlanModel.find()
-    // const count=await PlanModel.countDocuments()
-     return res.send({data:"allPlanData",total:"count"});
+    const allPlanData=await PlanModel.find()
+    const count=await PlanModel.countDocuments()
+     return res.send({data:allPlanData,total:count});
 })
 
 //update
